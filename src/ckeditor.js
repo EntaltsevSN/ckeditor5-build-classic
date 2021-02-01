@@ -17,6 +17,8 @@ import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
+//import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
@@ -29,6 +31,8 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment'
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code'
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -45,6 +49,8 @@ ClassicEditor.builtinPlugins = [
 	Heading,
 	Image,
 	ImageCaption,
+	//ImageInsert,
+	ImageResize,
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
@@ -56,7 +62,9 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Alignment,
+	Code
 ];
 
 // Editor configuration.
@@ -71,6 +79,7 @@ ClassicEditor.defaultConfig = {
 			'bulletedList',
 			'numberedList',
 			'|',
+			'alignment',
 			'indent',
 			'outdent',
 			'|',
@@ -79,7 +88,8 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'code'
 		]
 	},
 	image: {
@@ -98,5 +108,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'ru'
 };
